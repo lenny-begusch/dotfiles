@@ -1,0 +1,90 @@
+# ~/.config/hypr/hyprlock.conf
+# Custom Lockscreen Theme: Dark Grey / Black + Navy Blue
+# Hintergrund = geblurrter Screenshot des Desktops
+
+general {
+    hide_cursor = true
+    grace = 0
+    no_fade_in = false
+}
+
+background {
+    monitor =
+    path = screenshot
+    blur_passes = 3
+    blur_size = 7
+    noise = 0.02
+    contrast = 0.9
+    brightness = 0.65
+    vibrancy = 0.2
+}
+
+# --- Passwort-Eingabefeld ---
+input-field {
+    monitor =
+    size = 260, 52
+    outline_thickness = 2
+    dots_size = 0.25
+    dots_spacing = 0.3
+    dots_center = true
+
+    outer_color = rgb(0a1f44)
+    inner_color = rgba(1c1f26ee)
+    font_color = rgb(ffffff)
+
+    fade_on_empty = true
+    placeholder_text = <span foreground="##9aa0ab">Passwort eingeben</span>
+    hide_input = false
+
+    position = 0, -140
+    halign = center
+    valign = center
+}
+
+# --- Arch Linux Logo ---
+label {
+    monitor =
+    text = 
+    color = rgb(6ea0ff)
+    font_size = 56
+    font_family = JetBrainsMono Nerd Font
+    position = 0, 250
+    halign = center
+    valign = center
+}
+
+# --- Uhrzeit ---
+label {
+    monitor =
+    text = cmd[update:1000] echo "$(date +"%H:%M")"
+    color = rgb(ffffff)
+    font_size = 64
+    font_family = JetBrainsMono Nerd Font
+    position = 0, 170
+    halign = center
+    valign = center
+}
+
+# --- Datum ---
+label {
+    monitor =
+    text = cmd[update:60000] echo "$(date +"%A, %d. %B")"
+    color = rgb(9aa0ab)
+    font_size = 16
+    font_family = JetBrainsMono Nerd Font
+    position = 0, 100
+    halign = center
+    valign = center
+}
+
+# --- Benutzername ---
+label {
+    monitor =
+    text = $USER
+    color = rgb(9aa0ab)
+    font_size = 14
+    font_family = JetBrainsMono Nerd Font
+    position = 0, -70
+    halign = center
+    valign = center
+}
